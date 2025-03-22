@@ -1,11 +1,7 @@
-import AddItemForm from "./AddItemForm";
-import ButtonGroup from "./ButtonGroup";
-
-export default function Siderbar() {
+export default function Siderbar({ children }) {
   return (
     <div className="sidebar">
-      <AddItemForm />
-      <ButtonGroup />
+      {children}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import Button from "./Button";
 import { secondaryButtons } from "../lib/constants.js";
 
-export default function ButtonGroup() {
+export default function ButtonGroup( { onRemoveAllItems } ) {
 
   return (
     <section className="button-group">
