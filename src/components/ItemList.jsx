@@ -1,6 +1,6 @@
 import EmptyView from "./EmptyView";
 
-export default function ItemList( { items, handleToggleItem, handleDeleteItem} ) {
+export default function ItemList( { items, handleToggleItem, handleDeleteItem } ) {
   return (
     <ul className="item-list">
       {
