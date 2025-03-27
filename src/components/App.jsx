@@ -38,6 +38,13 @@ export default function App() {
     setItems(newItems);
   };
 
+  const handleMarkAllAsIncomplete = () => {
+    const newItems = items.map((item) => {
+      return { ...item, packed: false };
+    });
+    setItems(newItems);
+  };
+  
   const handleDeleteItem = (id) => {
     const newItems = items.filter((item) => item.id !== id);
     setItems(newItems);
@@ -53,12 +60,7 @@ export default function App() {
     setItems(newItems);
   };
 
-  const handleMarkAllAsIncomplete = () => {
-    const newItems = items.map((item) => {
-      return { ...item, packed: false };
-    });
-    setItems(newItems);
-  };
+
 
   return (
     <>
@@ -66,7 +68,7 @@ export default function App() {
       <main>
         <Header>
           <Logo />
-          <Counter />
+          <Counter totalItems={items.length} totalPacked={items.filter((item) => item.packed).length} />
         </Header>
         <ItemList
           items={items}
