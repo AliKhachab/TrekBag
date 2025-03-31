@@ -7,11 +7,13 @@ import AddItemForm from "./AddItemForm.jsx";
 import ButtonGroup from "./ButtonGroup.jsx";
 import Logo from "./Logo.jsx";
 import Counter from "./Counter.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { initialItems } from "../lib/constants.js";
 
 export default function App() {
-  const [items, setItems] = useState(initialItems);
+  const [items, setItems] = useState(
+    () => JSON.parse(localStorage.getItem("items")) || initialItems
+  ); // the first one if it exists, OR the second if it doesn't (opposite of AND short circuit)
 
   const handleAddItem = (newItemText) => {
     const newItem = {
@@ -60,7 +62,9 @@ export default function App() {
     setItems(newItems);
   };
 
-
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
   return (
     <>
