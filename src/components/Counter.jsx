@@ -1,4 +1,4 @@
-export default function Counter({ totalItems, totalPacked }) {
+export default function Counter({ totalPacked, totalItems }) {
   return (
     <p>
       <b>{totalPacked} </b>/ {totalItems} items packed
