@@ -1,7 +1,8 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 import { initialItems } from "../lib/constants";
 
-export const useItemsStore = create((set) => ({
+export const useItemsStore = create(persist((set) => ({
   items: initialItems,
   addItem: (newItemText) => {
     const newItem = {
@@ -50,4 +51,6 @@ export const useItemsStore = create((set) => ({
       return { items: newItems };
     });
   },
+}), {
+    name: "items",
 }));
