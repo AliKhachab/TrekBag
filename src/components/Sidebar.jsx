@@ -7,7 +7,7 @@ export default function Sidebar() {
   const addItem = useItemsStore(state => state.addItem);
   return (
     <div className="sidebar">
-      <AddItemForm onAddItem = {handleAddItem}/>
+      <AddItemForm onAddItem = {addItem}/>
       <ButtonGroup  />
     </div>
   )
