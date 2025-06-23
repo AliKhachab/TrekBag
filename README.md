@@ -2,8 +2,6 @@
 
 A React application that helps you keep track of your travel packing list. Built for practice and to demonstrate React fundamentals including state management, context API, and hooks.
 
-![TrekBag Screenshot](screenshot.png)
-
 ## Features
 
 - Create and manage your travel packing checklist
