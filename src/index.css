@@ -295,6 +295,113 @@ h1 {
   }
 }
 
+/* Mobile and tablet responsive styles */
+@media (max-width: 1000px) {
+  main {
+    width: 95%;
+    max-width: 972px;
+    height: 90vh;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 95%;
+    height: 90vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 59px 1fr 1fr;
+  }
+  
+  header {
+    grid-column: 1 / 2;
+  }
+  
+  .item-list {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    max-height: 50vh;
+  }
+  
+  .sidebar {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+  }
+  
+  h1 {
+    font-size: 70px;
+    top: 2%;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    overflow: auto;
+  }
+  
+  #root {
+    height: auto;
+    padding: 20px 0;
+  }
+  
+  main {
+    height: auto;
+    min-height: 90vh;
+  }
+  
+  .item > label, .item > button {
+    padding: 0 15px;
+    right: 15px;
+  }
+  
+  .sorting, .sidebar, header {
+    padding: 15px;
+  }
+
+  .button-group {
+    padding-top: 20px;
+  }
+  
+  h1 {
+    font-size: 50px;
+    position: static;
+    margin-bottom: 20px;
+    transform: none;
+  }
+  
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .button-group {
+    gap: 15px; /* Increased spacing between buttons */
+  }
+  
+  .btn {
+    font-size: 14px;
+    padding: 0 10px;
+    height: auto;
+    min-height: 45px; /* Maintain minimum height */
+  }
+
+  .button-group {
+    padding-top: 40px;
+  }
+  form > input {
+    margin: 8px 0 12px;
+  }
+  
+  .btn--secondary {
+    font-size: 13px;
+  }
+}
+
 footer {
   width: min(972px, 100%);
   display: flex;
